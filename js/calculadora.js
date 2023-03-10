@@ -60,15 +60,14 @@ function btn_division(caracter){
   limpar();
 }
 
-function reset() {
     // limpar visor
+function reset() {
     document.getElementById('visor').value = '';
     valorVisor = 0;
     operacion = "";
 }
 function limpar(){
     document.getElementById('visor').value = '';
-    
 }
 
 function btn_igual(){
@@ -77,11 +76,6 @@ function btn_igual(){
 }
 
 function resultado() {
-    // faz o calculo, pega o resultado e colocar no visor
-    //document.getElementById('visor').value = eval(resultado);
-
-    //document.getElementById('visor').value = resultado;
-    //document.getElementById('visor').value = eval(valorVisor);
 
     var total = 0;
     var ultimoTotal = 0;
