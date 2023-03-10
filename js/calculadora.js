@@ -20,10 +20,13 @@ function boton(tecla) {
     if(hora >= 0 && hora <= 12){
       document.getElementById("historico").textContent = "Bien.. Arrancamos antes de las 12..";
     }
-    if(hora >= 13 && hora <= 17){
+    if(hora >= 13 && hora <= 16){
       document.getElementById("historico").textContent = "Recien te levantas? Vago de m..";
     }
-    if(hora >= 18 && hora <= 23){
+    if(hora >= 16 && hora <= 19){
+      document.getElementById("historico").textContent = "Que querés a esta hora?";
+    }
+    if(hora >= 19 && hora <= 23){
       document.getElementById("historico").textContent = "Prepará un fernee viejaaa";
     }
 }
