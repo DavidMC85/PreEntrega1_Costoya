@@ -15,15 +15,15 @@ const HORA_TEMPRANO_MAX = 12;
 const HORA_TARDE_MAX = 19;
 const HORA_NOCHE_MAX = 24;
 
-var valorVisor = 0;
-var numeroA;
-var numeroB;
-var operacion;
-var ahora = new Date();
+let valorVisor = 0;
+let numeroA;
+let numeroB;
+let operacion;
+let ahora = new Date();
 
 // Función para solicitar el nombre del usuario
 function obtenerNombreUsuario() {
-  var nombreUsuario = localStorage.getItem("nombreUsuario");
+  let nombreUsuario = localStorage.getItem("nombreUsuario");
   if (!nombreUsuario) {
     nombreUsuario = prompt("Por favor, ingresa tu nombre:");
     localStorage.setItem("nombreUsuario", nombreUsuario);
@@ -32,8 +32,8 @@ function obtenerNombreUsuario() {
 }
 
 // Obtener el nombre del usuario y mostrar el saludo
-var nombreUsuario = obtenerNombreUsuario();
-alert("Bienvenido a mi pequeña calculadora, " + nombreUsuario + "!");
+let nombreUsuario = obtenerNombreUsuario();
+alert("Bienvenido a mi intento de calculadora, " + nombreUsuario + "!");
 console.log("Al fin alguien me va a usar!!");
 
 // reset del nombre
@@ -42,7 +42,7 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 function boton(tecla) {
-  var auxiliar = document.getElementById("visor").value;
+  let auxiliar = document.getElementById("visor").value;
   document.getElementById("visor").value = auxiliar + tecla;
 
   valorVisor = document.getElementById("visor").value = auxiliar + tecla;
@@ -92,6 +92,24 @@ function btn_igual() {
 function resultado() {
   var total = 0;
   var ultimoTotal = 0;
+
+//-------Version con switch, deshabilitada(no es buena practica), para Ferran asi no se enoja
+
+  /*switch (operacion) {
+    case OPERACIONES.SUMA:
+      total = parseFloat(numeroA) + parseFloat(numeroB);
+      break;
+    case OPERACIONES.RESTA:
+      total = parseFloat(numeroA) - parseFloat(numeroB);
+      break;
+    case OPERACIONES.MULTIPLICACION:
+      total = parseFloat(numeroA) * parseFloat(numeroB);
+      break;
+    case OPERACIONES.DIVISION:
+      total = parseFloat(numeroA) / parseFloat(numeroB);
+      break;
+  }*/
+
 
   if (operacion === "+") {
     total = parseFloat(numeroA) + parseFloat(numeroB);
