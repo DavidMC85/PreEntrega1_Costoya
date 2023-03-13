@@ -8,22 +8,22 @@ const OPERACIONES = {
 const SALUDOS = {
   TEMPRANO: "Buenos dias!",
   TARDE: "Buenas tardes!",
-  NOCHE: "Buenas nochieee!"
+  NOCHE: "Buenas nochieeess!"
 }
 
 const HORA_TEMPRANO_MAX = 12;
 const HORA_TARDE_MAX = 19;
 const HORA_NOCHE_MAX = 24;
 
-var valorVisor = 0;
-var numeroA;
-var numeroB;
-var operacion;
-var ahora = new Date();
+let valorVisor = 0;
+let numeroA;
+let numeroB;
+let operacion;
+let ahora = new Date();
 
 // Función para solicitar el nombre del usuario
 function obtenerNombreUsuario() {
-  var nombreUsuario = localStorage.getItem("nombreUsuario");
+  let nombreUsuario = localStorage.getItem("nombreUsuario");
   if (!nombreUsuario) {
     nombreUsuario = prompt("Por favor, ingresa tu nombre:");
     localStorage.setItem("nombreUsuario", nombreUsuario);
@@ -32,7 +32,7 @@ function obtenerNombreUsuario() {
 }
 
 // Obtener el nombre del usuario y mostrar el saludo
-var nombreUsuario = obtenerNombreUsuario();
+let nombreUsuario = obtenerNombreUsuario();
 alert("Bienvenido a mi pequeña calculadora, " + nombreUsuario + "!");
 console.log("Al fin alguien me va a usar!!");
 
@@ -41,8 +41,13 @@ window.addEventListener("beforeunload", function (event) {
   localStorage.removeItem("nombreUsuario");
 });
 
+window.onload = inicio;
+
+function inicio(){
+    document.getElementById('visor').value = '';
+}
 function boton(tecla) {
-  var auxiliar = document.getElementById("visor").value;
+  let auxiliar = document.getElementById("visor").value;
   document.getElementById("visor").value = auxiliar + tecla;
 
   valorVisor = document.getElementById("visor").value = auxiliar + tecla;
@@ -52,24 +57,28 @@ function boton(tecla) {
 
 function btn_suma(caracter) {
   numeroA = valorVisor;
+  numeroB = valorVisor;
   operacion = OPERACIONES.SUMA;
   limpar();
 }
 
 function btn_resta(caracter) {
   numeroA = valorVisor;
+  numeroB = valorVisor;
   operacion = OPERACIONES.RESTA;
   limpar();
 }
 
 function btn_multiplicacion(caracter) {
   numeroA = valorVisor;
+  numeroB = valorVisor;
   operacion = OPERACIONES.MULTIPLICACION;
   limpar();
 }
 
 function btn_division(caracter) {
   numeroA = valorVisor;
+  numeroB = valorVisor;
   operacion = OPERACIONES.DIVISION;
   limpar();
 }
@@ -90,17 +99,17 @@ function btn_igual() {
 }
 
 function resultado() {
-  var total = 0;
-  var ultimoTotal = 0;
+  let total = 0;
+  let ultimoTotal = 0;
 
   if (operacion === "+") {
-    total = parseFloat(numeroA) + parseFloat(numeroB);
+    total = Number(numeroA) + Number(numeroB);
   } else if (operacion === "-") {
-    total = parseFloat(numeroA) - parseFloat(numeroB);
+    total = Number(numeroA) - Number(numeroB);
   } else if (operacion === "*") {
-    total = parseFloat(numeroA) * parseFloat(numeroB);
+    total = Number(numeroA) * Number(numeroB);
   } else if (operacion === "/") {
-    total = parseFloat(numeroA) / parseFloat(numeroB);
+    total = Number(numeroA) / Number(numeroB);
   }
 
   ultimoTotal = total;
