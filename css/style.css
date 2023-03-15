@@ -1,5 +1,5 @@
 .fondo {
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(9, 3, 30);
 }
 
 .table {
@@ -8,7 +8,7 @@
 }
 
 .calcu {
-    background-color: rgb(12, 63, 71);
+    background-color: rgb(4, 37, 29);
     margin: auto;
 }
 
@@ -21,8 +21,11 @@
   }
   .boton_calcu {
     border-radius: 1px;
-    
-}
+  }
+  .boton_igual {
+    border-radius: 1px;
+  }  
+
 
 .display {
     margin: 0;
