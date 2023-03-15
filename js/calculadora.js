@@ -1,5 +1,3 @@
-//constantes globales (y OBJETOS.. maldito Ferran.. xP)
-
 const OPERACIONES = {
   SUMA: "+",
   RESTA: "-",
@@ -23,7 +21,6 @@ let numeroB;
 let operacion;
 let ahora = new Date();
 
-//gaurdar el user y resetearlo al refrescar.
 
 function obtenerNombreUsuario() {
   let nombreUsuario = localStorage.getItem("nombreUsuario");
@@ -34,6 +31,7 @@ function obtenerNombreUsuario() {
   return nombreUsuario;
 }
 
+// Nombre, saludo y reseteo al refrescar
 let nombreUsuario = obtenerNombreUsuario();
 alert("Bienvenido a mi pequeña calculadora, " + nombreUsuario + "!");
 console.log("Al fin alguien me va a usar!!");
@@ -46,10 +44,10 @@ window.addEventListener("beforeunload", function (event) {
 window.onload = inicio
 
 function inicio(){
-    document.getElementById('visor').value = '';
+    document.getElementById("visor").value = "";
 }
 
-//calculos de calcu
+//calculos
 
 function boton(tecla) {
   let auxiliar = document.getElementById("visor").value;
@@ -86,18 +84,21 @@ function btn_division(caracter) {
 }
 
 function reset() {
-  document.getElementById('visor').value = '';
+  document.getElementById("visor").value = "";
   valorVisor = 0;
-  operacion = '';
+  operacion = "";
 }
 
+function limpar() {
+  document.getElementById("visor").value = "";
+}
 
 function btn_igual() {
   numeroB = valorVisor;
   resultado();
 }
 
-//conteo de resultados
+//conteo de resultados!
 
 let button = document.getElementById("boton=");
 let count = 0;
@@ -114,7 +115,7 @@ for (let i = 0; i < 1; i++) {
   });
 }
 
-//calculo de resultados
+//resultados
 
 function resultado() {
   let total = 0;
@@ -132,8 +133,15 @@ function resultado() {
 
   ultimoTotal = total;
   reset();
-  document.getElementById('visor').value = total;
+  document.getElementById("visor").value = total;
   valorVisor = ultimoTotal;
 }
 
+//boton para salir
+
+document.getElementById("btn_salir").onclick = function(){
+  alert("Muchas gracias por utilizarme!!!");
+}
+
+/////
 

@@ -60,3 +60,11 @@
   width:100%;
   height:100%;
   }
+
+.boton_salir {
+  max-width: fit-content;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  border: 2px solid red;
+}
