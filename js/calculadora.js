@@ -1,19 +1,6 @@
-const OPERACIONES = {
-  SUMA: "+",
-  RESTA: "-",
-  MULTIPLICACION: "*",
-  DIVISION: "/"
-}
+// array (const global)
+const OPERACIONES = ["+", "-", "*", "/"];
 
-const SALUDOS = {
-  TEMPRANO: "Buenos dias!",
-  TARDE: "Buenas tardes!",
-  NOCHE: "Buenas nochieeess!"
-}
-
-const HORA_TEMPRANO_MAX = 12;
-const HORA_TARDE_MAX = 19;
-const HORA_NOCHE_MAX = 24;
 
 let valorVisor = 0;
 let numeroA;
@@ -43,8 +30,8 @@ window.addEventListener("beforeunload", function (event) {
 //poner en 0 el display al refrescar
 window.onload = inicio
 
-function inicio(){
-    document.getElementById("visor").value = "";
+function inicio() {
+  document.getElementById("visor").value = "";
 }
 
 //calculos
@@ -58,28 +45,28 @@ function boton(tecla) {
 function btn_suma(caracter) {
   numeroA = valorVisor;
   numeroB = valorVisor;
-  operacion = OPERACIONES.SUMA;
+  operacion = OPERACIONES[0];
   limpar();
 }
 
 function btn_resta(caracter) {
   numeroA = valorVisor;
   numeroB = valorVisor;
-  operacion = OPERACIONES.RESTA;
+  operacion = OPERACIONES[1];
   limpar();
 }
 
 function btn_multiplicacion(caracter) {
   numeroA = valorVisor;
   numeroB = valorVisor;
-  operacion = OPERACIONES.MULTIPLICACION;
+  operacion = OPERACIONES[2];
   limpar();
 }
 
 function btn_division(caracter) {
   numeroA = valorVisor;
   numeroB = valorVisor;
-  operacion = OPERACIONES.DIVISION;
+  operacion = OPERACIONES[3];
   limpar();
 }
 
@@ -104,12 +91,12 @@ let button = document.getElementById("boton=");
 let count = 0;
 
 for (let i = 0; i < 1; i++) {
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     count++;
-    if (count === 1){
+    if (count === 1) {
       console.log("He calculado mi primer resultado!")
     }
-    else{
+    else {
       console.log("Ya he calculado " + count + " resultados! Soy grossa!");
     }
   });
@@ -139,7 +126,7 @@ function resultado() {
 
 //boton para salir
 
-document.getElementById("btn_salir").onclick = function(){
+document.getElementById("btn_salir").onclick = function () {
   alert("Muchas gracias por utilizarme!!!");
 }
 
