@@ -127,8 +127,9 @@ function resultado() {
 //boton para salir
 
 document.getElementById("btn_salir").onclick = function () {
-  alert("Muchas gracias por utilizarme!!!");
+  if (confirm("¿Estás seguro de que deseas salir de la aplicación?")) {
+    location.href = "about:blank";
+  }
 }
-
 /////
 
