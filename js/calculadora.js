@@ -8,6 +8,7 @@ let numeroB;
 let operacion;
 let ahora = new Date();
 
+//----------
 
 function obtenerNombreUsuario() {
   let nombreUsuario = localStorage.getItem("nombreUsuario");
@@ -18,7 +19,8 @@ function obtenerNombreUsuario() {
   return nombreUsuario;
 }
 
-// Nombre, saludo y reseteo al refrescar
+// Mostrar el nombre, saludo y reseteo al refrescar
+
 let nombreUsuario = obtenerNombreUsuario();
 alert("Bienvenido a mi pequeña calculadora, " + nombreUsuario + "!");
 console.log("Al fin alguien me va a usar!!");
@@ -28,6 +30,7 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 //poner en 0 el display al refrescar
+
 window.onload = inicio
 
 function inicio() {
@@ -130,6 +133,7 @@ document.getElementById("btn_salir").onclick = function () {
   if (confirm("¿Estás seguro de que deseas salir de la aplicación?")) {
     location.href = "about:blank";
   }
+  else (alert("Bien pensado " + nombreUsuario + "!"))
 }
-/////
+
 
