@@ -133,7 +133,9 @@ document.getElementById("btn_salir").onclick = function () {
   if (confirm("¿Estás seguro de que deseas salir de la aplicación?")) {
     location.href = "about:blank";
   }
-  else (alert("Bien pensado " + nombreUsuario + "!"))
+  else (alert("Bien pensado " + nombreUsuario + "!")); {
+    reset()
+  }
 }
 
 
